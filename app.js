@@ -3,6 +3,9 @@ const board = document.querySelector('.board');
 const title = document.querySelector('#titleBtn');
 const about = document.querySelector('.about');
 const restart = document.querySelector('#restartBtn');
+const message = document.querySelector('.message');
+const cross = document.querySelector('#aboutCross');
+const winnerText = document.querySelector('.winner-text');
 var xTurn = true;
 var totalMoves = 0;
 var winner = '';
@@ -23,7 +26,10 @@ title.addEventListener('click', () => {
 
 startGame();
 
-restart.addEventListener('click', startGame());
+restart.addEventListener('click',() => {
+    message.classList.add('d-none');
+    startGame()
+});
 
 function startGame(){
     xTurn = true;
@@ -64,13 +70,14 @@ board.addEventListener('mouseover', e => {
     const isCell = currentCell.classList.contains('cell');
     const isFilled = currentCell.classList.contains('filled');
     if(isCell && !isFilled){
+        currentCell.classList.add('cell-hover');
         if(xTurn){
             currentCell.innerHTML = "x";
         }
         else{
             currentCell.innerHTML = "o";
         }
-        currentCell.classList.add('cell-hover');
+        
     }
 });
 
@@ -110,10 +117,14 @@ const checkWinner = () => {
 
 const gameStatus = (status) => {
     if(status === 1){
-        console.log("Winner is ", winner);
+        winnerText.innerHTML = `Winner is <span class = "text-danger">${winner}</span>!`
     }
     else if(status === 2){
-        console.log("Game Draws!");
+        winnerText.innerHTML = `It's a <span class = "text-danger">Draw</span>!`
     }
+    message.classList.remove('d-none');
 }
 
+cross.addEventListener('click', () => {
+    about.classList.add('d-none');
+});
