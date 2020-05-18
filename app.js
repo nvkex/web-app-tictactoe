@@ -5,7 +5,7 @@ const about = document.querySelector('.about');
 const restart = document.querySelector('#restartBtn');
 var xTurn = true;
 var totalMoves = 0;
-
+var winner = '';
 const WINNING_COMBINATIONS = [
     [0, 1, 2],
     [3, 4, 5],
@@ -90,6 +90,30 @@ board.addEventListener('mouseout', e => {
 });
 
 const checkWinner = () => {
-    console.log('Game Ended!');
+    for(var i=0; i<8; i++){
+        var cell1 = cells[WINNING_COMBINATIONS[i][0]].innerHTML;
+        var cell2 = cells[WINNING_COMBINATIONS[i][1]].innerHTML;
+        var cell3 = cells[WINNING_COMBINATIONS[i][2]].innerHTML;
+        if(cell1 == cell2 && cell1 == cell3){
+            winner = cell1;
+        }
+    }
+
+    if(winner.length != 0){
+        gameStatus(1);
+    }
+
+    if(totalMoves === 9){
+        gameStatus(2);
+    }
+}
+
+const gameStatus = (status) => {
+    if(status === 1){
+        console.log("Winner is ", winner);
+    }
+    else if(status === 2){
+        console.log("Game Draws!");
+    }
 }
 
