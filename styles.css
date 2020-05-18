@@ -1,0 +1,85 @@
+body{
+    background-color: #114555;
+    font-family: 'Pangolin', cursive;
+}
+ul{
+    display:inline;
+}
+
+#titleBtn{
+    font-size: 20px;
+}
+
+.board{
+    font-family: 'Comic Neue', cursive;
+    color: #114555;
+    font-size: 120px;
+    border-radius: 20px;
+    width:600px;
+    height:600px;
+    padding:0;
+    display:grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.board .cell{
+    display:inline;
+}
+
+.cell{
+    width:200px;
+    height:200px;
+    text-align: center;
+    border: 8px solid #114555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+  border-bottom: none;
+}
+
+.cell:nth-child(4),
+.cell:nth-child(5),
+.cell:nth-child(6) {
+    border-top:none;
+    border-bottom:none;
+}
+
+.cell:nth-child(2),
+.cell:nth-child(5),
+.cell:nth-child(8) {
+    border-left:none;
+    border-right:none;
+}
+
+
+/* temporary classes */
+.filled{
+    cursor: not-allowed;
+}
+
+.cell-hover{
+    color: #80cde5 !important;
+}
+
+

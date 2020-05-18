@@ -2,9 +2,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
     <title>Tic Tact Toe</title>
 </head>
 <body>
-    
+    <div class = "container-fluid bg-info text-center py-2">
+        <button class = "btn btn-info mx-auto" id = "titleBtn">TIC TAC TOE</button>
+    </div>
+
+    <div class="container my-5">
+        <div class = "board bg-info mx-auto">
+            
+            <div class = "cell"></div>
+            <div class = "cell"></div>
+            <div class = "cell"></div>
+            
+            <div class = "cell"></div>
+            <div class = "cell"></div>
+            <div class = "cell"></div>
+
+            <div class = "cell"></div>
+            <div class = "cell"></div>
+            <div class = "cell"></div>
+
+        </div>
+    </div>
+
+    <div class = "container message d-none">
+        <div class = "text-center">
+            <h2 class = "display-4"></h2>
+            <button class = "btn btn-info" id = "restartBtn">Restart</button>
+        </div>
+    </div>
+
+    <div class = "container about d-none">
+        <div class = " text-center">
+            <p></p>
+        </div>
+    </div>
+
+    <script src = "app.js"></script>
 </body>
 </html>
